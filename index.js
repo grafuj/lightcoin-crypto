@@ -22,7 +22,7 @@ class Transaction {
     this.account = account;
   }
   commit() {
-    if (this.isAllowed()){
+    if (this.isAllowed()) {
       console.log('its allowed!');
       this.time = new Date();
       this.account.addTransaction(this);
@@ -63,17 +63,17 @@ class Withdrawal extends Transaction {
 // We use the code below to "drive" the application logic above and make sure it's working as expected
 const myAccount = new Account("Bangor Test");
 
-t1 = new Withdrawal(50.25, myAccount);
+let t1 = new Withdrawal(50.25, myAccount);
 t1.commit();
 console.log('Transaction 1:', t1);
 console.log('value:', myAccount.balance);
 
-t2 = new Withdrawal(9.99, myAccount);
+let t2 = new Withdrawal(9.99, myAccount);
 t2.commit();
 console.log('Transaction 2:', t2);
 console.log('value:', myAccount.balance);
 
-t3 = new Deposit(120.00, myAccount);
+let t3 = new Deposit(120.00, myAccount);
 t3.commit();
 console.log('Transaction 3:', t3);
 
